@@ -1,6 +1,8 @@
+
+//⭐️ method1
 function duplicateCount(text){
     const newText = text.toUpperCase().split("");
-    console.log(newText.indexOf("I"));
+
 
     const findDu = newText.filter((v, i) => newText.indexOf(v) !== i);
     const newArray = [...new Set(findDu)];
@@ -9,7 +11,30 @@ function duplicateCount(text){
     return result;
   }
 
-  //result
+
+//⭐️ method2
+function duplicateCount(text){
+    const newText = text.toUpperCase().split("");
+   
+    const uniqueText = new Set(newText);
+    
+    const filterE = newText.filter((item) => {
+        if(uniqueText.has(item)){
+            uniqueText.delete(item);
+        }else{
+            return item;
+        }
+    });
+
+    const filterR = [...new Set(filterE)];
+    const result = filterR.length;
+    return result;
+  }
+
+
+
+  duplicateCount("aaabbcde")
+//result
 //   "abcde" -> 0 # no characters repeats more than once
 // "aabbcde" -> 2 # 'a' and 'b'
 // "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
