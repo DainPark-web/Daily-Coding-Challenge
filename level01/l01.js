@@ -7,6 +7,7 @@ function reverseWords(str) {
     
     return a;
   }
-
 console.log(reverseWords("dainpark is a developer"))
-//krapniad si a repolevedsdafasdf
+//result => krapniad si a repoleved
+
+
