@@ -1,0 +1,1 @@
+compile: tsc (fileName)
