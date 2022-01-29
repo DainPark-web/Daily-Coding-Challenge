@@ -1,14 +1,16 @@
 var uniqueInOrder=function(iterable){
     //your code here - remember iterable can be a string or an array
-    const data = iterable;
+    let data = iterable;
+
+    //check type
     if(typeof data !== "string"){
-        data.join("");
+      data = data.join("");
     }
 
-    console.log(typeof data)
-    const d = data.split("");
+    const newData = data.split("");
+    
     let pre = "";
-    const a = d.filter((a) => {
+    const result = newData.filter((a) => {
         if(a === pre){
             return ;
         }else{
@@ -16,8 +18,11 @@ var uniqueInOrder=function(iterable){
             return a;
         }
     })
-    console.log(a)
+    return result;
   }
 
 
-uniqueInOrder([1,2,2,3,3]);
+//result
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1,2,2,3,3])       == [1,2,3]
