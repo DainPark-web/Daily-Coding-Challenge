@@ -1,13 +1,14 @@
 var uniqueInOrder=function(iterable){
     //your code here - remember iterable can be a string or an array
     let data = iterable;
+   
+    let newData = "";
+    if(typeof data === "string"){
 
-    //check type
-    if(typeof data !== "string"){
-      data = data.join("");
+      newData = data.split("");
+    }else{
+      newData = data;
     }
-
-    const newData = data.split("");
     
     let pre = "";
     const result = newData.filter((a) => {
