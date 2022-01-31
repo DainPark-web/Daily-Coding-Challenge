@@ -1,43 +1,60 @@
+
+// still there are errors (sorting array)
+// And I need to improve this code. It looks so bad.
 function dirReduc(arr){
     const dir = arr;
 
     
+    const northDir = dir.filter((item, index) => item === "NORTH");
+    const southDir = dir.filter((item, index) => item === "SOUTH");
+    const eastDir = dir.filter((item, index) => item === "EAST");
+    const westDir = dir.filter((item, index) => item === "WEST");
 
+    let result = []
 
-    // dir.filter((item, index) => {
-    //     if(item === "NORTH" ){
-
-    //     }
-    // })
-
-    // for(let i = 0; i<dir.length; i++){
-    //     let found = "";
-    //     let fi = dir[i];
-    //     if(fi === "NORTH"){
-    //        found = dir.findIndex(e => e === "SOUTH");
-    //     }else if(fi === "SOUTH"){
-    //         found = dir.findIndex(e => e === "NORTH")
-    //     }else if(fi === "WEST"){
-    //         found = dir.findIndex(e => e === "EAST")
-    //     }else if(fi === "EAST"){
-    //         found = dir.findIndex(e => e === "WEST")
-    //         console.log(found);
-    //     }else{
-    //         // console.log("error");
-    //     }
-    //     console.log(fi, found, i, dir.length)
-        
-    //         dir.splice(i , 0);
-    //         dir.splice(found, 0);
-          
-        
-
-    // }
+    if(northDir.length === 1 && southDir.length ===1 && eastDir.length ===1 && westDir.length ===1){
+      result.push(northDir[0])
+      result.push(westDir[0])
+      result.push(southDir[0])
+      result.push(eastDir[0])
+    }else{
+      const ns = northDir.length - southDir.length;
+      const ew = eastDir.length - westDir.length;
+      if(ew !== 0){
+        if(ew > 0){
+          for(let i =0; i<ew; i++){
+            result.push("EAST")
+          }
+        }
+        if(ew < 0){
+          for(let i =0; i<Math.abs(ew); i++){
+            result.push("WEST");
+          }
+        }
+      }
+      if(ns !== 0){
+        if(ns > 0){
+          for(let i =0; i<ns; i++){
+            result.push("NORTH")
+          }
+        }
+        if(ns < 0){
+          for(let i =0; i<Math.abs(ns); i++){
+            result.push("SOUTH");
+          }
+        }
+      }
+      
+      result = result.reverse()
+    }
     
-    console.log(dir);
+
+    
+    return result;
     
   }
 
 
-// dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]);
+dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]);
+dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]);
 // ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]), ["WEST"]
