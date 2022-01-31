@@ -56,5 +56,5 @@ function dirReduc(arr){
 
 
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]);
-dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]);
+// dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]);
 // ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]), ["WEST"]
