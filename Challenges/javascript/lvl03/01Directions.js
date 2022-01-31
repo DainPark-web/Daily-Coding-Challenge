@@ -45,7 +45,7 @@ function dirReduc(arr){
         }
       }
       
-      result = result.reverse()
+      result = result.reverse();
     }
     
 
