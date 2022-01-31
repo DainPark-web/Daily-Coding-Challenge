@@ -5,6 +5,8 @@ function dirReduc(arr){
     const dir = arr;
     let result = []
 
+    
+
     dir.forEach((item, index) => {
      
       if(item === "NORTH"){
@@ -46,7 +48,7 @@ function dirReduc(arr){
 
     })
     
-   
+   return result;
   }
 
 
