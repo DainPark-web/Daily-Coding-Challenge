@@ -44,4 +44,4 @@ function checkExam(array1: string[], array2: string[]): number {
 
  checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"])
 
- //Check the exam
+ 
