@@ -34,7 +34,8 @@ function checkExam(array1, array2) {
             return -1;
         }
     });
-    console.log(newArray);
-    return newArray.reduce(function (a, b) { return a + b; }, 0);
+    var result = newArray.reduce(function (a, b) { return a + b; }, 0) < 0 ? 0 : newArray.reduce(function (a, b) { return a + b; }, 0);
+    return result;
 }
 checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]);
+//Check the exam

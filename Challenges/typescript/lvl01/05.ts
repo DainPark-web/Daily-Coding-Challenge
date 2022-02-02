@@ -37,8 +37,9 @@ function checkExam(array1: string[], array2: string[]): number {
      }
    });
   
-   console.log(newArray)
-   return newArray.reduce((a, b) => a + b, 0);
+  const result = newArray.reduce((a, b) => a + b, 0) < 0 ? 0 : newArray.reduce((a, b) => a + b, 0);
+  
+   return result;
  }
 
  checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"])
