@@ -9,6 +9,12 @@
 1. javascript/lvl03/01Directions.js
 
 # Tip
+
+## Convert typescript to es6 in tsconfig.json
+```ts
+ "target": "es6",  
+```
+
 ## new Set between Typescript and Javascript
 ```ts
 //typescript
