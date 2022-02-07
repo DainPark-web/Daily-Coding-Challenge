@@ -5,8 +5,8 @@
 
 
 
-### Refactoring
-1. javascript/lvl03/01Directions.js
+## Issues 
+⁉️ Challenges/typescript/lvl03/02.ts
 
 # Tip
 
