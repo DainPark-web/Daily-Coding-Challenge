@@ -2,7 +2,10 @@
 // return 10 ~ 19 = 2
 // return 20 ~ 19 = 3
 // ...
-var dainCall = function (e) {
+var dainM03 = function (e) {
+    var num = e + 1;
+    // console.log(e%10);
+    console.log(Math.ceil(num / 10));
     return 0;
 };
-dainCall(1);
+dainM03(30);

@@ -3,9 +3,11 @@
 // return 20 ~ 19 = 3
 // ...
 
-const dainCall = (e:number):number => {
-
+const dainM03 = (e:number):number => {
+    const num:number = e + 1;
+    // console.log(e%10);
+    console.log(Math.ceil(num/10));
     return 0;
 }
 
-dainCall(1);
+dainM03(30);
