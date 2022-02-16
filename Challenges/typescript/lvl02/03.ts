@@ -9,10 +9,19 @@ function pyramid(n: number) {
         resultArray.push([...itemArray]);
         
     }
-    console.log(resultArray);
+    return resultArray;
   }
 
   pyramid(4);
+
+// better than my code
+// export function pyramid(n: number) {
+//     const ret = [];
+//     for (let i = 0; i < n; i++) {
+//       ret.push(Array(i + 1).fill(1));
+//     }
+//     return ret;
+//   }
 
 
 //return

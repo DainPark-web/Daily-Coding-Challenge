@@ -15,6 +15,11 @@
  "target": "es6",  
 ```
 
+## array.fill
+[fill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) <br />
+array안의 elements를 fill 의 값으로 변경
+
+
 ## new Set between Typescript and Javascript
 ```ts
 //typescript
