@@ -5,15 +5,18 @@
 
 
 
-## Issues 
-⁉️ Challenges/typescript/lvl03/02.ts
-
 # Tip
 
 ## Convert typescript to es6 in tsconfig.json
 ```ts
  "target": "es6",  
 ```
+
+
+# ⭐️
+
+## array swap
+
 
 ## array.fill
 [fill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill) <br />
