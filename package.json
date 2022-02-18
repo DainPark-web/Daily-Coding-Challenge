@@ -1,0 +1,19 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DainPark-web/Daily-Coding-Challenge.git",
+  "author": "dain <57316771+DainPark-web@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc-watch --onSuccess \" node Challenges/typescript/dist/index.js \""
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.6.0"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.18",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  }
+}
