@@ -7,13 +7,22 @@ function dblLinear(n: number): number {
     for(let i = 0; i < n; i++){
         const y = (u[i] * 2) + 1;
         const z = (u[i] * 3) + 1;
-        u.push(y);
-        u.push(z);
-
-        u = u.sort((a, b) => a-b);
+        
+        if(y > u[i]){
+            u.push(y);
+        }
+        if(z > u[i]){
+            
+            u.push(z);
+        }
+        
+        // console.log(u)
     }
     
-    const result:number[] = Array.from(new Set(u))
+    // u = u.sort((a, b) => a - b);
+    let result:number[] = Array.from(new Set(u))
+    // result = result.sort((a, b) => a - b);
+
     console.log(result);
     //find durch Index U
     return result[n];
