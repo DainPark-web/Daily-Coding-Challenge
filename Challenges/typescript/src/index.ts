@@ -3,8 +3,11 @@
 function dblLinear(n: number): number {
 
     //make U
+    // console.log(Math.sqrt(n))
     let u:number[] = [1];
-    for(let i = 0; i < n; i++){
+    const p = Math.pow(n, 2);
+
+    for(let i = 0; i < p; i++){
         const y = (u[i] * 2) + 1;
         const z = (u[i] * 3) + 1;
         
@@ -15,11 +18,15 @@ function dblLinear(n: number): number {
             
             u.push(z);
         }
+
+        // if(i === n){
+        //     break;
+        // }
         
         // console.log(u)
     }
     
-    // u = u.sort((a, b) => a - b);
+    u = u.sort((a, b) => a - b);
     let result:number[] = Array.from(new Set(u))
     // result = result.sort((a, b) => a - b);
 
