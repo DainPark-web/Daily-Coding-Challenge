@@ -3,36 +3,29 @@
 function dblLinear(n: number): number {
 
     //make U
-    // console.log(Math.sqrt(n))
     let u:number[] = [1];
-    const p = Math.pow(n, 2);
+    let x:number = 0;
+    let y:number = 0;
 
-    for(let i = 0; i < p; i++){
-        const y = (u[i] * 2) + 1;
-        const z = (u[i] * 3) + 1;
+    for(let i = 0; i < n; i++){
+        const nextX = (u[x] * 2) + 1;
+        const nextY = (u[y] * 3) + 1;
         
-        if(y > u[i]){
-            u.push(y);
-        }
-        if(z > u[i]){
-            
-            u.push(z);
+        if (nextX <= nextY) {
+            u.push(nextX)
+            x++
+            if (nextX == nextY)
+                y++
+        } else {
+            u.push(nextY)
+            y++
         }
 
-        // if(i === n){
-        //     break;
-        // }
-        
-        // console.log(u)
+       
     }
     
-    u = u.sort((a, b) => a - b);
-    let result:number[] = Array.from(new Set(u))
-    // result = result.sort((a, b) => a - b);
-
-    console.log(result);
-    //find durch Index U
-    return result[n];
+   
+    return u[n];
 }
 
 console.log(dblLinear(100));
