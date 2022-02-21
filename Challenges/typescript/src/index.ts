@@ -1,17 +1,19 @@
 //Wwice linear
 
-export function dblLinear(n: number): number {
+function dblLinear(n: number): number {
 
     //make U
     let u:number[] = [1];
     for(let i = 0; i < n; i++){
-        const firstN = (u[i] * 2) + 1;
-        const lastN = (u[i] * 3) + 1;
-        u.push(firstN);
-        u.push(lastN);
+        const y = (u[i] * 2) + 1;
+        const z = (u[i] * 3) + 1;
+        u.push(y);
+        u.push(z);
+
+        u = u.sort((a, b) => a-b);
     }
     
-    const result:number[] = Array.from(new Set(u.sort((a,b) => a - b)))
+    const result:number[] = Array.from(new Set(u))
     console.log(result);
     //find durch Index U
     return result[n];
