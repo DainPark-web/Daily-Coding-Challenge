@@ -73,3 +73,27 @@ function findTheNotFittingElement(series:any[]):any
 }
 
 console.log(findTheNotFittingElement([ 2, 2, -2, 6, 10 ]));
+
+
+
+
+
+
+
+
+// Better than me
+// export function findTheNotFittingElement(series:any[]):any {
+//     let equality = [], type = [], even = [], sign = [], ucase = [], alpha = [];
+//     let result = [equality, type, even, sign, ucase, alpha];
+    
+//     series.forEach(a => {
+//       if( series.filter( b => a === b ).length === 1) equality.push(a);
+//       if( series.filter( b => typeof a === typeof b ).length === 1) type.push(a);
+//       if( series.filter( b => (a % 2 === 0) === (b % 2 === 0)).length === 1) even.push(a);
+//       if( series.filter( b => (+a > 0 ? 1 : -1) === (+b > 0 ? 1 : -1)).length === 1) sign.push(a);
+//       if( series.filter( b => (a === `${a}`.toUpperCase()) === (b === `${b}`.toUpperCase()) ).length === 1) ucase.push(a);
+//       if( series.filter( b => /[a-zA-Z]/.test(`${a}`) === /[a-zA-Z]/.test(`${b}`)).length === 1) alpha.push(a);
+//     });
+    
+//     return result.filter( arr => arr.length === 1 )[0][0];
+//   }
