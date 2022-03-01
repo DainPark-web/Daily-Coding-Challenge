@@ -24,9 +24,19 @@ function numberToEnglish(x: number): string {
     else if(x > 99 && x < 1000){
         const ft = Number(x.toString().split("")[0]);
         //  여기서 부터 십의자리 수 찾기 
-        console.log(ft)
-        const result = `${num[ft]} hundred`
-        return result;
+        const fn = Number(x.toString().split("").slice(1).join(""));
+
+        if(fn < 20){
+            return `${num[ft]} hundred ${num[fn]}`;
+        }
+        else{
+            const fna = Number(fn.toString().split("")[0]);
+  
+            const fnb = Number(fn.toString().split("")[1]);
+          
+            const result = x % 100 === 0 ? `${num[ft]} hundred` : `${num[ft]} hundred ${numB[fna-2]} ${fnb != 0 ? num[fnb] : ""}`
+            return result;
+        }
     }
     else{
         return "d"
@@ -34,4 +44,4 @@ function numberToEnglish(x: number): string {
   
 }
 
-console.log(numberToEnglish(900));
+console.log(numberToEnglish(922));
