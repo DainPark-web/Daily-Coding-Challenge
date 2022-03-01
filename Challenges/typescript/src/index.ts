@@ -1,5 +1,6 @@
 // Ninety Nine Thousand Nine Hundred Ninety Nine
 
+
 function numberToEnglish(x: number): string {
 
     //0 ~ 19
@@ -10,7 +11,6 @@ function numberToEnglish(x: number): string {
     const numB = ["twenty", "thirty", "fourty", "sixty","fifty", "seventy", "eighty", "ninety"];
 
     if(x <= 19){
-      
         return num[x];
     }
     else if(x > 19 && x <= 99){
@@ -27,7 +27,7 @@ function numberToEnglish(x: number): string {
         const fn = Number(x.toString().split("").slice(1).join(""));
 
         if(fn < 20){
-            return `${num[ft]} hundred ${num[fn]}`;
+            return `${num[ft]} hundred ${fn !== 0 ? num[fn] : ""}`;
         }
         else{
             const fna = Number(fn.toString().split("")[0]);
@@ -38,10 +38,38 @@ function numberToEnglish(x: number): string {
             return result;
         }
     }
+    else if(x > 1000 && x < 9999){
+        const st = Number(x.toString().split("")[0]);
+        const ftt = `${num[st]} thousand`;
+        const checkN = Number(x.toString().split("").slice(1).join(""));
+        
+        if(checkN > 99 && checkN < 1000){
+            const ft = Number(checkN.toString().split("")[0]);
+            //  여기서 부터 십의자리 수 찾기 
+            const fn = Number(checkN.toString().split("").slice(1).join(""));
+    
+            if(fn < 20){
+               
+                return `${ftt} ${num[ft]} hundred ${fn !== 0 ? num[fn] : ""}`;
+            }
+            else{
+               
+                const fna = Number(fn.toString().split("")[0]);
+      
+                const fnb = Number(fn.toString().split("")[1]);
+                
+                const result = checkN % 100 === 0 ? `${ftt} ${num[ft]} hundred` : `${ftt} ${num[ft]} hundred ${numB[fna-2]} ${fnb != 0 ? num[fnb] : ""}`
+                return result;
+            }
+    }else{
+        return "something wrong"
+    }
+}
     else{
         return "d"
     }
   
 }
 
-console.log(numberToEnglish(922));
+console.log(numberToEnglish(100));
+//만자리 수 부터 다시 다루자
