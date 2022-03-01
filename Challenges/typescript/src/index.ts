@@ -73,3 +73,4 @@ function numberToEnglish(x: number): string {
 
 console.log(numberToEnglish(100));
 //만자리 수 부터 다시 다루자
+//fuck this code is so ugly
