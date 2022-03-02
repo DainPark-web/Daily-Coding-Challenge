@@ -42,7 +42,7 @@ function numberToEnglish(x: number): string {
         const st = Number(x.toString().split("")[0]);
         const ftt = `${num[st]} thousand`;
         const checkN = Number(x.toString().split("").slice(1).join(""));
-        
+        console.log(checkN);
         if(checkN > 99 && checkN < 1000){
             const ft = Number(checkN.toString().split("")[0]);
             //  여기서 부터 십의자리 수 찾기 
@@ -62,15 +62,54 @@ function numberToEnglish(x: number): string {
                 return result;
             }
     }else{
-        return "something wrong"
+        return ftt
     }
 }
     else{
-        return "d"
+        const total = x.toString().split("")
+        const st = Number(total.splice(0, 2).join(""));
+        const rest = Number(total.join(""));
+        console.log(rest);
+        
+        let thouResult:any = "";
+        let hundResult:any =""
+        //thousand
+        if(st <= 19){
+            thouResult= `${num[st]} thousand`;
+        }
+        else{
+            const ft = Number(st.toString().split("")[0]);
+            const fn = Number(st.toString().split("")[1]);
+            // console.log(ft, fn);
+            const result = `${numB[ft-2]} ${fn != 0 ? num[fn] : ""}`;
+            // console.log(result)
+            thouResult= `${result} thousand`
+        }
+
+        //hundred
+        if(rest > 99 && rest < 1000){
+            const ft = Number(rest.toString().split("")[0]);
+            //  여기서 부터 십의자리 수 찾기 
+            const fn = Number(rest.toString().split("").slice(1).join(""));
+    
+            if(fn < 20){
+                hundResult= `${num[ft]} hundred ${fn !== 0 ? num[fn] : ""}`;
+            }
+            else{
+                const fna = Number(fn.toString().split("")[0]);
+      
+                const fnb = Number(fn.toString().split("")[1]);
+              
+                const result = rest % 100 === 0 ? `${num[ft]} hundred` : `${num[ft]} hundred ${numB[fna-2]} ${fnb != 0 ? num[fnb] : ""}`
+                hundResult=result;
+            }
+        }
+        
+        return `${thouResult} ${hundResult}`
     }
   
 }
 
-console.log(numberToEnglish(100));
+console.log(numberToEnglish(20));
 //만자리 수 부터 다시 다루자
 //fuck this code is so ugly
